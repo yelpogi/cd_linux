@@ -1,0 +1,31 @@
+<project basedir="." default="compile" name="site">
+    <path id="class.path">
+        <fileset dir="lib">
+            <include name="**/*"/>
+        </fileset>
+    </path>
+    <target name="compile">
+        <delete dir="classes"/>
+        <mkdir dir="classes"/>
+        <javac debug="true" debuglevel="lines,vars,source" destdir="classes" includeantruntime="false" includes="**/*" srcdir="sources">
+            <classpath refid="class.path"/>
+        </javac>
+    </target>
+    <target depends="compile" name="run">
+        <echo message="Running on Linux..."/>
+        <exec executable="pkill">
+            <arg value="-f"/>
+            <arg value="site.Bootstrap"/>
+        </exec>
+        <sleep seconds="1"/>
+        <java classname="site.Bootstrap" classpathref="class.path" fork="true">
+            <classpath>
+                <pathelement location="classes/"/>
+            </classpath>
+        </java>
+        <sleep seconds="2"/>
+    </target>
+    <target depends="run" name="test">
+        <fail/>
+    </target>
+</project>

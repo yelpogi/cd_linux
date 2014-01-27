@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
 
-config.vm.define "buid" do |build|  
-  build.vm.box = "buid"
-  build.vm.hostname = "buid"
+config.vm.define "build" do |build|  
+  build.vm.box = "build"
+  build.vm.hostname = "build"
 end
 
   config.vm.network "forwarded_port", guest: 8080, host: 8080

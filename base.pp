@@ -9,9 +9,6 @@ node 'build' inherits default {
   package { "openjdk-6-jdk" :
         ensure => "latest"
   }
-  package { "git-core" :
-        ensure => "latest"
-  }
   package { "ant" :
         ensure => "latest"
   }

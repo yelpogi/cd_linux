@@ -33,8 +33,8 @@ class Bootstrap {
     public static int getPort() throws Exception {
         int port = 9090;
 
-        if (System.getenv().get("APP_PORT") != null) {
-            port = Integer.parseInt(System.getenv().get("APP_PORT"));
+        if (System.getProperty("APP_PORT") != null) {
+            port = Integer.parseInt(System.getProperty("APP_PORT"));
         }
 
         return port;

@@ -11,6 +11,10 @@ end
   config.vm.network "forwarded_port", guest: 6060, host: 6060
 
   config.vm.provision "shell", path: "provision.sh"
+  
+  config.proxy.http = "http://proxy.nus.edu.sg:8080"
+  config.proxy.https = "http://proxy.nus.edu.sg:8080"
+  config.proxy.no_proxy = "localhost,127.0.0.1"
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = ""

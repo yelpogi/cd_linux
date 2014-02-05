@@ -19,6 +19,6 @@ end
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = ""
     puppet.manifest_file  = "base.pp"
-    #puppet.options = "--verbose --debug"
+    puppet.options = "--verbose --debug"
   end
 end

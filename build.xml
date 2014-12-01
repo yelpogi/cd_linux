@@ -26,9 +26,7 @@
         <sleep seconds="2"/>
     </target>
     <target depends="compile" name="test">
-      <!-- fail/>
-      -->
-       <junit printsummary="yes" haltonfailure="yes">
+      <junit printsummary="yes" haltonfailure="yes">
         <classpath refid="class.path"/>
         <classpath>
           <pathelement path="classes"/>

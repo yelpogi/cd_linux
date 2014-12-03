@@ -1,0 +1,4 @@
+update test 
+set NEWREMARK = "Ariel 1" where ID = 6;
+update test 
+set NEWREMARK = "Ariel 1" where ID = 7;
